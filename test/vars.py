@@ -1,10 +1,6 @@
 # ============================================================
 # Universidad Politécnica de Santa Rosa Jáuregui
-<<<<<<< HEAD
-# Alumno: Luis Ángel Silva Ramírez
-=======
 # Alumno: Maria Judith Guerrero Solis
->>>>>>> ee11686 (mis cambios locales)
 # Materia: Arquitecturas de Software
 # Profesor: Jesús Salvador López Ortega
 # Grupo: ISW28

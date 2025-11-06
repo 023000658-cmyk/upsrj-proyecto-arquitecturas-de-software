@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> ee11686 (mis cambios locales)
 # ============================================================
 # Universidad Politécnica de Santa Rosa Jáuregui
 # Alumno: Maria Judith Guerrero Solis
@@ -33,8 +29,4 @@ class SigningService:
             padding.PKCS1v15(),
             hashes.SHA256()
         )
-<<<<<<< HEAD
         
-=======
-        
->>>>>>> ee11686 (mis cambios locales)

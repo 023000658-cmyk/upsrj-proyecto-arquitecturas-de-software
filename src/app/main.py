@@ -2,11 +2,7 @@
 # Politécnica de Santa Rosa
 #
 # Materia: Arquitecturas de Software
-<<<<<<< HEAD
 # Profesor: Maria Judith Guerrero Solis
-=======
-# Alumno: Maria Judith Guerrero Solis
->>>>>>> ee11686 (mis cambios locales)
 # Grupo: ISW28
 # Archivo: main.py
 # Descripción: Este código implementa la estructura base de una aplicación web utilizando el framework Flask en Python.
