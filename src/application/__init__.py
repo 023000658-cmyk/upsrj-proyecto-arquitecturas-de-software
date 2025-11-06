@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ============================================================
 # Universidad Politécnica de Santa Rosa Jáuregui
 # Alumno: Luis Angel Silva Ramirez
@@ -36,3 +37,5 @@ class UploadBinaryUseCase:
         )
         self.db_repo.add(binary)
         return binary
+=======
+>>>>>>> ee11686 (mis cambios locales)

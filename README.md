@@ -1,4 +1,4 @@
-![upsrj-logo](docs/img/upsrj.png)
+![upsrj-log](docs/img/upsrj.png)
 # Politécnica de Santa Rosa
 
 | Subject         | Software Architectures                  |
@@ -6,7 +6,13 @@
 | Title           | Final Project                           |
 | Owner           | [Maria Judith Guerrero Solis](023000658@upsrj.edu.mx) |
 
-[Diagram_uml](docs/img/Diagram.png)
+## Deployment UML Diagram
+
+![Diagram_uml](docs/img/Diagram.png)
+
+## Components UML Diagram
+
+![Components_uml](docs/img/components.png)
 
 ## Project structure
 ```
