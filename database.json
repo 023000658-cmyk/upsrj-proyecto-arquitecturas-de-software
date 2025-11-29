@@ -1,0 +1,12 @@
+[
+    {
+        "id": "7ca6b967-2185-449d-8f1d-880ce294ca93",
+        "filename": "data/binaries/7ca6b967-2185-449d-8f1d-880ce294ca9320251129013411.bin",
+        "environment": "prod",
+        "status": "signed",
+        "uploaded_at": "2025-11-29T01:34:11.890931",
+        "signed_path": "/workspaces/upsrj-proyecto-arquitecturas-de-software/data/signed/signed_7ca6b967-2185-449d-8f1d-880ce294ca9320251129013411.bin",
+        "signature": "09bed65e5207727e1d736062cae5ea23c4bbced00a49e258003d93cd5d5ad13a",
+        "timestamp": "2025-11-29T01:34:11.891854"
+    }
+]
