@@ -1,6 +1,6 @@
 <!-- ============================================================
 Universidad Politécnica de Santa Rosa Jáuregui
-Alumno: Luis Ángel Silva Ramírez
+Alumno: Maria Judith Guerrero Solis
 Materia: Arquitecturas de Software
 Profesor: Jesús Salvador López Ortega
 Grupo: ISW28
@@ -21,199 +21,231 @@ Descripción: Este archivo define la plantilla HTML principal del visor
     <meta charset="UTF-8">
     <title>Gestor de Archivos Firmados</title>
     <style>
-        /* --- NUEVO TEMA (Azules/Grises Modernos) --- */
-        :root {
-            --bg-dark: #0f172a;
-            --bg-container: #1e293b;
-            --border-color: #334155;
-            --text-primary: #e2e8f0;
-            --text-secondary: #94a3b8;
-            --color-accent: #3b82f6;
-            --color-accent-dark: #2563eb;
-            --color-success: #22c55e;
-            --color-warning: #f59e0b;
-        }
+    :root {
+        --dark-bg: #0b0b12;
+        --dark-bg-2: #12121c;
+        --dark-bg-3: #1a1a27;
 
-        body {
-            font-family: "Inter", Arial, sans-serif;
-            margin: 0;
-            padding: 25px;
-            min-height: 100vh;
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        --gradient-1: #7e22ce;
+        --gradient-2: #a21caf;
+        --gradient-3: #ec4899;
 
-        h1 {
-            color: var(--text-primary);
-            font-weight: 600;
-            margin-bottom: 2rem;
-            letter-spacing: 0.5px;
-        }
+        --glass-bg: rgba(255, 255, 255, 0.06);
+        --glass-bg-2: rgba(255, 255, 255, 0.03);
+        --glass-border: rgba(255, 255, 255, 0.15);
 
-        /* --- CONTENEDOR DEL FORMULARIO --- */
-        .upload-wrapper {
-            background: var(--bg-container);
-            padding: 2.5rem;
-            width: 100%;
-            max-width: 520px;
-            margin-bottom: 2rem;
-            border-radius: 14px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-        }
+        --text-primary: #ffffff;
+        --text-secondary: #c084fc;
 
-        .form-group { margin-bottom: 1.5rem; }
+        --accent: #e879f9;
+        --accent-dark: #d946ef;
 
-        label {
-            color: var(--text-secondary);
-            margin-bottom: 0.4rem;
-            display: block;
-            font-size: 0.95rem;
-        }
+        --success: #22c55e;
+        --warning: #facc15;
 
-        input[type="file"] {
-            color: var(--text-primary);
-        }
+        --shadow-strong: 0 10px 60px rgba(0,0,0,0.55);
+        --shadow-soft: 0 6px 30px rgba(0,0,0,0.45);
+    }
 
-        select {
-            width: 100%;
-            padding: 12px;
-            background: #334155;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            color: var(--text-primary);
-            cursor: pointer;
-            font-size: 1rem;
-        }
+    body {
+        margin: 0;
+        padding: 35px;
+        min-height: 100vh;
 
-        button {
-            width: 100%;
-            padding: 14px;
-            background: var(--color-accent);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            transition: 0.25s ease;
-        }
+        font-family: "Inter", sans-serif;
+        color: var(--text-primary);
 
-        button:hover {
-            background: var(--color-accent-dark);
-        }
+        background: var(--dark-bg);
+        background: radial-gradient(circle at top, var(--dark-bg-3), var(--dark-bg));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-        /* --- TABLA --- */
-        .table-container {
-            width: 100%;
-            max-width: 1050px;
-            overflow-x: auto;
-        }
+    /* TITULO */
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 2.6rem;
+        letter-spacing: 1px;
+        padding-bottom: 5px;
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--bg-container);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-        }
+        background: linear-gradient(90deg, #fff, #e9d5ff, #ec4899);
+        -webkit-background-clip: text;
+        color: transparent;
 
-        th, td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
+        text-shadow: 0 4px 25px rgba(0,0,0,0.55);
+    }
 
-        th {
-            background: #0f172a;
-            color: var(--color-accent);
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-        }
+    /* WRAPPER */
+    .upload-wrapper {
+        width: 100%;
+        max-width: 520px;
 
-        a.download-link {
-            color: var(--color-accent);
-            font-weight: bold;
-            text-decoration: none;
-        }
+        padding: 2.5rem;
+        margin-bottom: 2.5rem;
 
-        a.download-link:hover {
-            text-decoration: underline;
-        }
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(18px);
+        border-radius: 20px;
 
-        /* --- ETIQUETAS --- */
-        .status {
-            padding: 5px 10px;
-            font-size: 0.75rem;
-            border-radius: 6px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+        box-shadow: var(--shadow-strong);
+    }
 
-        .status.signed {
-            background: rgba(34, 197, 94, 0.2);
-            color: var(--color-success);
-            border: 1px solid var(--color-success);
-        }
+    label {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        margin-bottom: 8px;
+        display: block;
+    }
 
-        .status.pending {
-            background: rgba(245, 158, 11, 0.15);
-            color: var(--color-warning);
-            border: 1px solid var(--color-warning);
-        }
+    input[type="file"],
+    select {
+        width: 100%;
+        padding: 12px;
 
-        .environment { font-weight: bold; }
-        .env-prod { color: #f87171; }
-        .env-dev { color: #38bdf8; }
+        background: var(--glass-bg-2);
+        backdrop-filter: blur(6px);
+        border: 1px solid var(--glass-border);
+        border-radius: 12px;
 
-        /* --- POPUP --- */
-        #popup {
+        color: var(--text-primary);
+        margin-bottom: 1.2rem;
 
+        box-shadow: var(--shadow-soft);
+    }
 
+    /* BOTÓN */
+    button {
+        width: 100%;
+        padding: 14px;
 
+        border: none;
+        border-radius: 14px;
+        cursor: pointer;
 
+        background: linear-gradient(90deg, var(--gradient-2), var(--gradient-3));
+        color: white;
 
+        font-weight: 700;
+        font-size: 1rem;
 
+        box-shadow: var(--shadow-strong);
+        transition: 0.25s ease;
+    }
 
+    button:hover {
+        transform: translateY(-3px);
+        background: linear-gradient(90deg, var(--gradient-3), var(--gradient-1));
+    }
 
-           
-            display: none;
+    /* TABLA */
+    .table-container {
+        width: 100%;
+        max-width: 1100px;
+        overflow-x: auto;
+    }
 
+    table {
+        width: 100%;
+        border-collapse: collapse;
 
+        background: var(--dark-bg-2);
+        border-radius: 16px;
 
-            position: fixed;
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(8px);
 
-            top: 20px;
-            right: 20px;
-            padding: 18px 25px;
-            background: var(--color-success);
-            color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.45);
-            font-weight: 500;
-            animation: slideIn 0.45s ease-out;
-            
-            
-            
-            z-index: 1000;
-        
-        }
+        box-shadow: var(--shadow-strong);
+    }
 
-        @keyframes slideIn {
-            from { transform: translateX(140%); }
-            to { transform: translateX(0); }
-        }
-    </style>
+    th {
+        padding: 1rem;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        background: rgba(255,255,255,0.08);
+        color: #f3c4fd;
+    }
+
+    td {
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        color: var(--text-secondary);
+    }
+
+    /* LINKS */
+    a.download-link {
+        color: #f0abfc;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.25s;
+    }
+
+    a.download-link:hover {
+        color: #fff;
+        text-shadow: 0 0 8px rgba(255,255,255,0.9);
+    }
+
+    /* BADGES */
+    .status {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+        font-weight: bold;
+        border-radius: 6px;
+        text-transform: uppercase;
+    }
+
+    .status.signed {
+        background: rgba(34, 197, 94, 0.15);
+        color: var(--success);
+        border: 1px solid var(--success);
+    }
+
+    .status.pending {
+        background: rgba(250, 204, 21, 0.15);
+        color: var(--warning);
+        border: 1px solid var(--warning);
+    }
+
+    /* ENTORNOS */
+    .environment { font-weight: bold; }
+    .env-prod { color: #fb7185; }
+    .env-dev { color: #a78bfa; }
+
+    /* POPUP */
+    #popup {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+
+        padding: 18px 25px;
+        border-radius: 14px;
+        font-weight: 700;
+
+        background: var(--accent-dark);
+        color: white;
+        backdrop-filter: blur(12px);
+
+        box-shadow: var(--shadow-soft);
+        animation: slideIn 0.45s ease-out;
+        z-index: 1000;
+    }
+
+    @keyframes slideIn {
+        from { transform: translateX(160%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+</style>
+
 </head>
 
 <body>
 
-    <h1>Gestor de Archivos Firmados</h1>
+    <h1>OTA Signer Aplication</h1>
 
     <div class="upload-wrapper">
         <form id="uploadForm">
